@@ -2,9 +2,19 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="google-maven-central" />
+      <option name="name" value="GCS Maven Central mirror" />
+      <option name="url" value="https://maven-central.storage-download.googleapis.com/maven2/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="seeburger" />
+      <option name="name" value="SEEBURGER Repository" />
+      <option name="url" value="https://repo.seeburger.de/repository/seeburger/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />

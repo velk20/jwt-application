@@ -7,6 +7,7 @@ import com.jwt.application.repository.UserRoleRepository;
 import com.jwt.application.util.JwtUtil;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -64,7 +65,9 @@ public class AuthService {
                         request.getPassword()
                 )
         );
-        var user = userRepository.getUserByUsername(request.getUsername()).orElseThrow();
+        var user = userRepository
+                .getUserByUsername(request.getUsername())
+                .orElseThrow(() -> new UsernameNotFoundException("User Not Found!"));
         var jwtToken = jwtUtil.generateToken(user.getUsername());
         return AuthResponse.builder()
                 .token(jwtToken)

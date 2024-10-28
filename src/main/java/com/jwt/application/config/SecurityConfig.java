@@ -45,7 +45,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/api/v1/admin/**").authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
-//                .exceptionHandling(auth -> auth.authenticationEntryPoint(customAuthenticationEntryPoint))
+                .exceptionHandling(auth -> auth.authenticationEntryPoint(customAuthenticationEntryPoint))
                 .authenticationProvider(authenticationProvider());
 
         return http.build();

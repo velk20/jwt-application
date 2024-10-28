@@ -1,4 +1,4 @@
-package com.jwt.application.config;
+package com.jwt.application.exception;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
